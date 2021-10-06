@@ -86,8 +86,4 @@ public class CategoryDao implements ICategoryDao {
         return category;
     }
 
-    @Override
-    public List<Category> findUserByName(String name) {
-        return null;
-    }
 }

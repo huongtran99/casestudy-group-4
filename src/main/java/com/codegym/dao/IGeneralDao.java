@@ -13,5 +13,4 @@ public interface IGeneralDao<T> {
 
     T findById(int id);
 
-    List<T> findUserByName(String name);
 }

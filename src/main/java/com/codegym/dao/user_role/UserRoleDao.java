@@ -38,8 +38,4 @@ public class UserRoleDao implements IUserRoleDao {
         return null;
     }
 
-    @Override
-    public List<UserRole> findUserByName(String name) {
-        return null;
-    }
 }
