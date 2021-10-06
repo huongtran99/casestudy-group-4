@@ -1,5 +1,7 @@
 package com.codegym.dao;
 
+import com.codegym.model.Product;
+
 import java.util.List;
 
 public interface IGeneralDao<T> {
@@ -7,9 +9,9 @@ public interface IGeneralDao<T> {
 
     boolean save(T t);
 
-    boolean update(int id, T t);
+    boolean update(int id,T t);
 
-    boolean delete(int id);
+    boolean delete (int id );
 
     T findById(int id);
 
