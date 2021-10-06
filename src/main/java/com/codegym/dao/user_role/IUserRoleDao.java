@@ -1,4 +1,8 @@
 package com.codegym.dao.user_role;
 
-public interface IUserRoleDao {
+import com.codegym.dao.IGeneralDao;
+import com.codegym.model.UserRole;
+
+public interface IUserRoleDao extends IGeneralDao<UserRole> {
+
 }

@@ -1,4 +1,10 @@
 package com.codegym.dao.user;
 
-public interface IUserDao g{
+import com.codegym.dao.IGeneralDao;
+import com.codegym.model.User;
+
+public interface IUserDao extends IGeneralDao<User> {
+
+    User findByUserNameAndPassword(String user_name, String password);
+
 }
