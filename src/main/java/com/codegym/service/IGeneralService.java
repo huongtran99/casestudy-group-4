@@ -1,4 +1,16 @@
 package com.codegym.service;
 
-public interface IGeneralService {
+import java.sql.SQLException;
+import java.util.List;
+
+public interface IGeneralService<T> {
+    List<T> getAll() ;
+
+    boolean save(T t) ;
+
+    boolean update(int id, T t);
+
+    boolean delete(int id) ;
+
+    T findById(int id) ;
 }
