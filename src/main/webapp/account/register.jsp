@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- start header menu -->
             <ul class="megamenu skyblue">
-                <li class="active grid"><a class="color1" href="index.jsp">Home</a></li>
+                <li class="active grid"><a class="color1" href="#">Home</a></li>
                 <li class="grid"><a class="color2" href="#">Shirt</a></li>
                 <li class="grid"><a class="color2" href="#">Book</a></li>
                 <li class="grid"><a class="color2" href="#">Water Bottle</a></li>
@@ -124,7 +124,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- start registration -->
         <div class="registration">
             <div class="registration_left">
-                <h2>new user? <span> create an account </span></h2>
+                <h2><span> create an account </span></h2>
+                <c:if test="${message}">
+                    <p>${message}</p>
+                </c:if>
                 <!-- [if IE]
                     < link rel='stylesheet' type='text/css' href='ie.css'/>
                  [endif] -->
@@ -202,7 +205,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <input placeholder="password" type="password" name="password" tabindex="4" required>
                             </label>
                         </div>
-
                         <div>
                             <label>
                                 <input placeholder="about:" type="text" tabindex="2" name="about" required autofocus>

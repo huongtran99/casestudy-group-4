@@ -1,8 +1,13 @@
 package com.codegym.controller;
 
+import com.codegym.dao.user.UserDao;
 import com.codegym.model.Category;
+import com.codegym.model.Product;
+import com.codegym.model.User;
 import com.codegym.service.category.CategoryService;
 import com.codegym.service.category.ICategoryService;
+import com.codegym.service.product.IProductService;
+import com.codegym.service.product.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,6 +18,8 @@ import java.util.List;
 @WebServlet(name = "CategoryServlet", value = "/categories")
 public class CategoryServlet extends HttpServlet {
     private ICategoryService categoryService = new CategoryService();
+    private IProductService productService = new ProductService();
+    private UserDao userDao = new UserDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,12 +40,26 @@ public class CategoryServlet extends HttpServlet {
                 showEditCategoryForm(request, response);
                 break;
             }
+            case "view": {
+                showProductByCategory(request, response);
+                break;
+            }
             default: {
                 showCategoryList(request, response);
                 break;
             }
 
         }
+    }
+
+    private void showProductByCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int categoryId = Integer.parseInt(request.getParameter("category_id"));
+        List<Product> products = productService.findProductByCategoryId(categoryId);
+        User user = userDao.user;
+        request.setAttribute("products",products);
+        request.setAttribute("user",user);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/category/list_product.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showEditCategoryForm(HttpServletRequest request, HttpServletResponse response) {
@@ -48,9 +69,7 @@ public class CategoryServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("category/edit.jsp");
         try {
             dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
     }

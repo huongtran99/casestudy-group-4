@@ -1,7 +1,5 @@
 package com.codegym.model;
 
-
-
 public class Product {
     private int product_id;
     private String product_name;
@@ -12,6 +10,8 @@ public class Product {
     private int product_inventory;
     private int category_id;
     private int brand_id;
+    private Category category;
+    private Brand brand;
 
     public Product() {
 
@@ -110,5 +110,21 @@ public class Product {
 
     public void setBrand_id(int brand_id) {
         this.brand_id = brand_id;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 }

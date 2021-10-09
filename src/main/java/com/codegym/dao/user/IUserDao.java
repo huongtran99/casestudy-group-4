@@ -10,4 +10,6 @@ public interface IUserDao extends IGeneralDao<User> {
     User findByUserNameAndPassword(String user_name, String password);
 
     List<User> findUserByName(String name);
+
+    User getUserDefaultDao();
 }

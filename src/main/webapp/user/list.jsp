@@ -15,20 +15,20 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">3H1S</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/home.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Product Management</a>
+                    <a class="nav-link" href="/product">Product Management</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category Management</a>
+                    <a class="nav-link" href="/categories">Category Management</a>
                 </li>
             </ul>
         </div>
@@ -38,7 +38,7 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-6">Product list</h3>
+                <h3 class="col-6">User list</h3>
                 <form class="d-flex col-6" action="/user" method="get">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
                     <button class="btn btn-outline-success" type="submit">Search</button>

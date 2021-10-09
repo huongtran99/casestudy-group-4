@@ -2,6 +2,7 @@ package com.codegym.dao.product;
 
 import com.codegym.dao.DBConnection;
 import com.codegym.model.Product;
+import com.codegym.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +19,7 @@ public class ProductDao implements IProductDao {
     public List<Product> getAll() {
         List<Product> products = new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement("select  * from product");
+            PreparedStatement statement = connection.prepareStatement("select * from product");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int product_id = resultSet.getInt("product_id");
@@ -121,13 +122,53 @@ public class ProductDao implements IProductDao {
     }
 
     @Override
-    public Product findByCategory(int category_id) {
-        return null;
+    public List<Product> findProductByCategoryId(int categoryId) {
+        List<Product> products = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from product where category_id = ?");
+            preparedStatement.setInt(1, categoryId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("product_id");
+                String name = resultSet.getString("product_name");
+                String code = resultSet.getString("product_code");
+                String description = resultSet.getString("description");
+                double price = resultSet.getDouble("product_price");
+                String image = resultSet.getString("product_image");
+                int inventory = resultSet.getInt("product_inventory");
+                int category = resultSet.getInt("category_id");
+                int brand = resultSet.getInt("brand_id");
+                Product product = new Product(id, name, code, description, price, image, inventory, category, brand);
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
     }
 
     @Override
-    public Product findByName(String product_name) {
-        return null;
+    public List<User> findUserByName(String name) {
+        List<User> user = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("select * from users where user_name = ?");
+            statement.setString(1, name);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int user_id = resultSet.getInt("user_id");
+                String password = resultSet.getString("password");
+                String email = resultSet.getString("email");
+                String role = resultSet.getString("role");
+                String gender = resultSet.getString("gender");
+                String phone = resultSet.getString("phone");
+                String avatar = resultSet.getString("avatar");
+                String about = resultSet.getString("about");
+                user.add(new User(user_id, name, password, email, role, gender, phone, avatar, about));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
     @Override

@@ -12,6 +12,9 @@ import java.util.List;
 
 public class UserDao implements IUserDao {
     private Connection connection = DBConnection.getConnection();
+    public static int userId;
+    private User userDefault;
+    public static User user;
 
     @Override
     public List<User> getAll() {
@@ -125,10 +128,14 @@ public class UserDao implements IUserDao {
         return user;
     }
 
+    @Override
+    public User getUserDefaultDao() {
+        return userDefault;
+    }
 
     @Override
     public User findByUserNameAndPassword(String user_name, String password) {
-        User user = null;
+        userDefault = null;
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement("select * from users where user_name = ? and password = ?;");
@@ -143,12 +150,14 @@ public class UserDao implements IUserDao {
                 String gender = rs.getString("gender");
                 String phone = rs.getString("phone");
                 String about = rs.getString("about");
-                user = new User(user_id, user_name, password, email, role, gender, phone, avatar, about);
+                userDefault = new User(user_id, user_name, password, email, role, gender, phone, avatar, about);
+                userId = user_id;
+                user = userDefault;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return user;
+        return userDefault;
     }
 
     private User getUser(int id, User user, ResultSet resultSet) throws SQLException {

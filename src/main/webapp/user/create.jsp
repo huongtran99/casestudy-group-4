@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">3H1S</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,14 +59,6 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
                     <input id="image" type="text" placeholder="product image" name="image" >
-                </div>
-                <div class="mb-3">
-                    <label for="category" class="form-label">Category</label>
-                    <select name="category" id="category">
-                        <c:forEach items="${categories}" var="category">
-                            <option value="${category.id}">${category.name}</option>
-                        </c:forEach>
-                    </select>
                 </div>
             </div>
         </div>

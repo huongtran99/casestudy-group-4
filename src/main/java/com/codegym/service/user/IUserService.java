@@ -9,6 +9,7 @@ public interface IUserService extends IGeneralService<User> {
 
     List<User> findUserByName(String user_name);
 
-    boolean login(String user_name, String password);
+    User login(String user_name, String password);
 
+    User getUserDefault();
 }

@@ -1,6 +1,7 @@
 package com.codegym.service.product;
 
 import com.codegym.model.Product;
+import com.codegym.model.User;
 import com.codegym.service.IGeneralService;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface IProductService extends IGeneralService<Product> {
     List<Product> findProductByCategoryId(int category_id);
 
     boolean updateProductAmountAfterUserBuy(int id, int product_inventory);
+
+    List<User> findUserByName(String user_name);
 }

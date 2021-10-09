@@ -76,11 +76,15 @@ public class HomeServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user_name = request.getParameter("user_name");
         String password = request.getParameter("password");
-        boolean check = userService.login(user_name, password);
-        if (check) {
+        User user = userService.login(user_name, password);
+        if (user != null && user.getRole().equals("Admin")) {
             response.sendRedirect("/user");
+        } else if (user != null && user.getRole().equals("Customer")){
+            request.setAttribute("user", user);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+            dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/error-404.jsp");
             dispatcher.forward(request, response);
         }
     }
@@ -94,9 +98,14 @@ public class HomeServlet extends HttpServlet {
         String about = request.getParameter("about");
         User user = new User(user_name, password, email, gender, phone, about);
         boolean check = userService.save(user);
+        String message = "";
         if (check) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/account/register.jsp");
-            dispatcher.forward(request, response);
+            message = "Register success!";
+        } else {
+            message = "Register fail!";
         }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/account/register.jsp");
+        request.setAttribute("message", message);
+        dispatcher.forward(request, response);
     }
 }

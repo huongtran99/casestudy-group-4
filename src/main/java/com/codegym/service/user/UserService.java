@@ -9,6 +9,7 @@ import java.util.List;
 public class UserService implements IUserService {
 
     private IUserDao userDao = new UserDao();
+    public User user;
 
     @Override
     public List<User> getAll() {
@@ -41,12 +42,14 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean login(String user_name, String password) {
-        User user = userDao.findByUserNameAndPassword(user_name, password);
-        if (user != null) {
-            return true;
-        }
-        return false;
+    public User login(String user_name, String password) {
+        user =  userDao.findByUserNameAndPassword(user_name, password);
+        return user;
+    }
+
+    @Override
+    public User getUserDefault() {
+        return user;
     }
 
 }

@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- header_top -->
-<div class="top_bg">
+<div class="top_bg" style="background-color: yellowgreen">
   <div class="container">
     <div class="header_top">
       <div class="top_right">
@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <div class="rgt-bottom">
             <div class="log">
               <div class="login" >
-                <div id="loginContainer"><a href="/?action=login" id="loginButton"><span>Login</span></a>
+                <div id="loginContainer"><a href="/?action=login" id="loginButton"><span style="font-family: bold">Login</span></a>
                   <div id="loginBox">
                     <form id="loginForm" method="post">
                       <fieldset id="body">
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>
             </div>
             <div class="reg">
-              <a href="/?action=register">REGISTER</a>
+              <a href="/?action=register" style="font-family: bold">REGISTER</a>
             </div>
             <div class="cart box_1">
               <a href="#">
@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="clearfix"> </div>
             </div>
             <div class="create_btn">
-              <a href="#">CHECKOUT</a>
+              <a href="#" style="background-color: yellowgreen">CHECKOUT</a>
             </div>
             <div class="clearfix"> </div>
           </div>
@@ -111,11 +111,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- start header menu -->
       <ul class="megamenu skyblue">
         <li class="active grid"><a class="color1" href="index.jsp">Home</a></li>
-        <li class="grid"><a class="color2" href="#">Shirt</a></li>
-        <li class="grid"><a class="color2" href="#">Book</a></li>
-        <li class="grid"><a class="color2" href="#">Water Bottle</a></li>
-        <li class="grid"><a class="color2" href="#">Course</a></li>
-        <li class="grid"><a class="color2" href="#">Other Products</a></li>
+        <li class="grid"><a class="color2" href="account/login.jsp">Shirt</a></li>
+        <li class="grid"><a class="color2" href="account/login.jsp">Book</a></li>
+        <li class="grid"><a class="color2" href="account/login.jsp">Water Bottle</a></li>
+        <li class="grid"><a class="color2" href="account/login.jsp">Course</a></li>
+        <li class="grid"><a class="color2" href="account/login.jsp">Other Products</a></li>
       </ul>
     </div>
   </div>
@@ -124,22 +124,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="container">
     <div class="arriv-top">
       <div class="col-md-6 arriv-left">
-        <img src="images/1.jpg" class="img-responsive" alt="">
+        <img src="image/9.jpg" class="img-responsive" alt="">
         <div class="arriv-info">
           <h3>NEW PRODUCT</h3>
           <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
           <div class="crt-btn">
-            <a href="details.html">TAKE A LOOK</a>
+            <a href="#" style="color: yellow">TAKE A LOOK</a>
           </div>
         </div>
       </div>
       <div class="col-md-6 arriv-right">
-        <img src="images/2.jpg" class="img-responsive" alt="">
+        <img src="image/3.jpg" class="img-responsive" alt="">
         <div class="arriv-info">
-          <h3>TUXEDO</h3>
+          <h3>BOOK</h3>
           <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
           <div class="crt-btn">
-            <a href="details.html">SHOP NOW</a>
+            <a href="details.html" style="color: yellow">SHOP NOW</a>
           </div>
         </div>
       </div>
@@ -147,88 +147,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="arriv-bottm">
       <div class="col-md-8 arriv-left1">
-        <img src="images/3.jpg" class="img-responsive" alt="">
+        <img src="images/11.jpg" style="width: 750px; height: 500px" class="img-responsive" alt="">
         <div class="arriv-info1">
-          <h3>SWEATER</h3>
+          <h3>WATER BOTTLE</h3>
           <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
           <div class="crt-btn">
-            <a href="details.html">SHOP NOW</a>
+            <a href="details.html" style="color: yellow">SHOP NOW</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 arriv-right1">
-        <img src="images/4.jpg" class="img-responsive" alt="">
+        <img src="image/2.jpg" class="img-responsive" alt="">
         <div class="arriv-info2">
-          <a href="details.html"><h3>Trekking Shoes<i class="ars"></i></h3></a>
+          <a href="details.html"><h3>OTHER PRODUCTS<i class="ars"></i></h3></a>
         </div>
       </div>
       <div class="clearfix"> </div>
     </div>
-    <div class="arriv-las">
-      <div class="col-md-4 arriv-left2">
-        <img src="images/5.jpg" class="img-responsive" alt="">
-        <div class="arriv-info2">
-          <a href="details.html"><h3>Casual Glasses<i class="ars"></i></h3></a>
-        </div>
-      </div>
-      <div class="col-md-4 arriv-middle">
-        <img src="images/6.jpg" class="img-responsive" alt="">
-        <div class="arriv-info3">
-          <h3>FRESH LOOK T-SHIRT</h3>
-          <div class="crt-btn">
-            <a href="details.html">SHOP NOW</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 arriv-right2">
-        <img src="images/7.jpg" class="img-responsive" alt="">
-        <div class="arriv-info2">
-          <a href="details.html"><h3>Elegant Watches<i class="ars"></i></h3></a>
-        </div>
-      </div>
       <div class="clearfix"> </div>
-    </div>
-  </div>
-</div>
-<div class="special">
-  <div class="container">
-    <h3>Special Offers</h3>
-    <div class="specia-top">
-      <ul class="grid_2">
-        <li>
-          <a href="details.html"><img src="images/8.jpg" class="img-responsive" alt=""></a>
-          <div class="special-info grid_1 simpleCart_shelfItem">
-            <h5>Lorem ipsum dolor</h5>
-            <div class="item_add"><span class="item_price"><h6>ONLY $40.00</h6></span></div>
-            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-          </div>
-        </li>
-        <li>
-          <a href="details.html"><img src="images/9.jpg" class="img-responsive" alt=""></a>
-          <div class="special-info grid_1 simpleCart_shelfItem">
-            <h5>Consectetur adipis</h5>
-            <div class="item_add"><span class="item_price"><h6>ONLY $60.00</h6></span></div>
-            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-          </div>
-        </li>
-        <li>
-          <a href="details.html"><img src="images/10.jpg" class="img-responsive" alt=""></a>
-          <div class="special-info grid_1 simpleCart_shelfItem">
-            <h5>Commodo consequat</h5>
-            <div class="item_add"><span class="item_price"><h6>ONLY $14.00</h6></span></div>
-            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-          </div>
-        </li>
-        <li>
-          <a href="details.html"><img src="images/11.jpg" class="img-responsive" alt=""></a>
-          <div class="special-info grid_1 simpleCart_shelfItem">
-            <h5>Voluptate velit</h5>
-            <div class="item_add"><span class="item_price"><h6>ONLY $37.00</h6></span></div>
-            <div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-          </div>
-        </li>
-        <div class="clearfix"> </div>
-      </ul>
     </div>
   </div>
 </div>

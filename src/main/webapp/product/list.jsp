@@ -17,8 +17,8 @@
         <td>Price</td>
         <td>Image</td>
         <td>Inventory</td>
-        <td>Category_id</td>
-        <td>Brand_id</td>
+        <td>Category</td>
+        <td>Brand</td>
     </tr>
     </thead>
     <tbody>
@@ -31,8 +31,8 @@
             <td>${product.product_price}</td>
             <td><img src="${product.product_image}" alt="ava" height="100" width="100"></td>
             <td>${product.product_inventory}</td>
-            <td>${product.category_id}</td>
-            <td>${product.brand_id}</td>
+            <td>${(product.category).category_name}</td>
+            <td>${(product.brand).brand_name}</td>
             <td><a href="/product?action=edit&product_id=${product.product_id}">Edit</a></td>
             <td><a href="/product?action=delete&product_id=${product.product_id}">Delete</a></td>
         </tr>
